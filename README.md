@@ -2,7 +2,7 @@ Here’s a **README.md** file for your GitHub repository containing installation
 
 ---
 
-```md
+
 # **Kubernetes Setup on WSL Ubuntu** 🚀
 
 ## **Overview**
