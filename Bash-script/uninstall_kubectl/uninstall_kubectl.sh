@@ -1,7 +1,3 @@
-
----
-
-```bash
 #!/bin/bash
 
 # Uninstall kubectl from WSL Ubuntu
@@ -25,7 +21,3 @@ echo "✅ Verifying removal..."
 which kubectl || echo "✅ kubectl has been successfully uninstalled!"
 
 echo "🎉 kubectl uninstallation completed!"
-```
-
----
-
