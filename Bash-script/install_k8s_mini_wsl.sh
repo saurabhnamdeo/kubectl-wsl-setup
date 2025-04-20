@@ -1,4 +1,3 @@
-```bash
 #!/bin/bash
 
 # Kubernetes Setup on WSL Ubuntu
@@ -47,4 +46,3 @@ kubectl cluster-info
 kubectl get nodes
 
 echo "🎉 Kubernetes setup on WSL Ubuntu completed successfully!"
-```
