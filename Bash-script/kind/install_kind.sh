@@ -3,23 +3,21 @@
 # Update system and install dependencies
 echo "Updating system packages..."
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y curl apt-transport-https
+sudo apt install -y curl docker.io
 
-# Install kubectl
-echo "Installing kubectl..."
-curl -LO "https://dl.k8s.io/release/$(curl -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-chmod +x kubectl
-sudo mv kubectl /usr/local/bin/
+# Install kind
+echo "Installing kind..."
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
+chmod +x ./kind
+sudo mv ./kind /usr/local/bin/kind
 
-# Install Minikube
-echo "Installing Minikube..."
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-chmod +x minikube-linux-amd64
-sudo mv minikube-linux-amd64 /usr/local/bin/minikube
+# Configure Docker for WSL
+echo "Configuring Docker..."
+sudo usermod -aG docker $USER
+newgrp docker
 
 # Verify installation
 echo "Checking versions..."
-kubectl version --client
-minikube version
+kind version
 
-echo "Installation complete! 🚀"
+echo "Kind installation complete! 🚀"
